@@ -15,7 +15,12 @@ GitHub Pages will publish the site at the URL shown in the Pages settings.
 
 ## Update the static files
 
-The static `app.js` and `styles.css` are built from the files in `src/`. If you
-edit the source app, run `npm install` and `npm run build`, then copy the newly
-generated JavaScript and CSS from `dist/assets/` over `app.js` and `styles.css`
-before publishing. These steps are only needed to rebuild after source changes.
+The static `app.js` and `styles.css` are built from the files in `src/`. After
+changing the source app or styles, run `npm install` and `npm run build`, then
+copy the generated JavaScript and CSS from `dist/assets/` over `app.js` and
+`styles.css` before publishing the root files. Upload the updated `index.html`
+as well so stylesheet cache-busting changes take effect.
+
+For a build-based deployment instead, publish the contents of `dist/`. Its
+asset paths are relative, so it also works when GitHub Pages serves the site
+from a repository subpath.
